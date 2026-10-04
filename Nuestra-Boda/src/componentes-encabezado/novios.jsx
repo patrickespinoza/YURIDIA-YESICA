@@ -338,36 +338,37 @@ const Novios = () => {
         />
 
         {/* MENSAJE */}
-        <motion.p
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1,
-            delay: 1,
-          }}
-          viewport={{ once: true }}
-          className="
-            mt-9
-            max-w-xl
-            mx-auto
-            text-[#3E332A]
-            text-base sm:text-lg
-            font-playfair
-            leading-[1.9]
-          "
-        >
-          Es quien hace aún más especial este momento,
-          <br className="hidden sm:block" />
-          y nos encantará contar con tu presencia
-          <br className="hidden sm:block" />
-          para celebrar juntos.
-        </motion.p>
+        <motion.div
+  initial={{
+    opacity: 0,
+    y: 20,
+  }}
+  whileInView={{
+    opacity: 1,
+    y: 0,
+  }}
+  transition={{
+    duration: 1,
+    delay: 1,
+  }}
+  viewport={{ once: true }}
+  className="
+    mt-9
+    max-w-xl
+    mx-auto
+    text-center
+    text-[#3E332A]
+    text-base sm:text-lg
+    font-playfair
+    leading-[1.9]
+  "
+>
+  <p>Es quien hace aún más especial este momento,</p>
+
+  <p>y nos encantará contar con tu presencia</p>
+
+  <p>para celebrar juntos.</p>
+</motion.div>
 
         {/* DECORACIÓN FINAL */}
         <motion.div
