@@ -303,9 +303,6 @@ const Novios = () => {
           </h1>
 
           <p
-          style={{
-              fontFamily: " cursive",
-            }}
             className="
               mt-3
               uppercase
@@ -315,7 +312,7 @@ const Novios = () => {
               font-normla
             "
           >
-            Lopez Ramirez
+            López Ramirez
           </p>
         </motion.div>
 
