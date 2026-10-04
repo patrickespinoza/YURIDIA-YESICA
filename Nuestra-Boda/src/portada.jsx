@@ -23,153 +23,168 @@ export default function Portada() {
         "
       />
 
-      {/* SOMBRA SUTIL SUPERIOR */}
+      {/* SOMBRA MUY SUTIL ARRIBA Y ABAJO */}
       <div
         className="
           absolute inset-0
           bg-gradient-to-b
-          from-black/35
-          via-black/5
-          to-transparent
+          from-black/30
+          via-transparent
+          to-black/30
           pointer-events-none
         "
       />
 
-      {/* CONTENIDO SUPERIOR */}
-      <div
+      {/* =========================
+          NOMBRES - PARTE SUPERIOR
+      ========================== */}
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: -30,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 1.2,
+          delay: 0.4,
+          ease: [0.22, 1, 0.36, 1],
+        }}
         className="
-          relative z-10
-          w-full h-full
-          flex flex-col
-          items-center
-          justify-start
-          text-center
+          absolute
+          z-10
+          top-12
+          sm:top-14
+          md:top-16
+          left-0
+          w-full
           px-6
-          pt-14
-          sm:pt-16
-          md:pt-20
+          text-center
         "
       >
-        {/* NOMBRES */}
-        <motion.div
+        <h1
+          className="
+            text-white
+            font-playfair
+            text-[42px]
+            sm:text-6xl
+            md:text-7xl
+            lg:text-8xl
+            leading-[0.95]
+            tracking-[-0.02em]
+            drop-shadow-[0_3px_12px_rgba(0,0,0,0.45)]
+          "
+        >
+          Yuridia
+        </h1>
+
+        {/* & */}
+        <motion.p
           initial={{
             opacity: 0,
-            y: -30,
+            scale: 0.7,
           }}
           animate={{
             opacity: 1,
-            y: 0,
+            scale: 1,
           }}
           transition={{
-            duration: 1.2,
-            delay: 0.5,
-            ease: [0.22, 1, 0.36, 1],
+            duration: 1,
+            delay: 0.8,
           }}
+          className="
+            my-1
+            sm:my-2
+            text-white
+            text-3xl
+            sm:text-4xl
+            md:text-5xl
+            font-[Cedarville_Cursive]
+            drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]
+          "
         >
-          <h1
-            className="
-              text-white
-              font-playfair
-              text-[42px]
-              sm:text-6xl
-              md:text-7xl
-              lg:text-8xl
-              leading-[0.95]
-              tracking-[-0.02em]
-              drop-shadow-[0_3px_12px_rgba(0,0,0,0.35)]
-            "
-          >
-            Yuridia
-          </h1>
+          &
+        </motion.p>
 
-          {/* & */}
-          <motion.p
-            initial={{
-              opacity: 0,
-              scale: 0.8,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
-            transition={{
-              duration: 1,
-              delay: 0.9,
-            }}
-            className="
-              my-1
-              sm:my-2
-              text-white
-              text-3xl
-              sm:text-4xl
-              md:text-5xl
-              font-[Cedarville_Cursive]
-              drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]
-            "
-          >
-            &
-          </motion.p>
+        <h1
+          className="
+            text-white
+            font-playfair
+            text-[42px]
+            sm:text-6xl
+            md:text-7xl
+            lg:text-8xl
+            leading-[0.95]
+            tracking-[-0.02em]
+            drop-shadow-[0_3px_12px_rgba(0,0,0,0.45)]
+          "
+        >
+          Yesica
+        </h1>
+      </motion.div>
 
-          <h1
-            className="
-              text-white
-              font-playfair
-              text-[42px]
-              sm:text-6xl
-              md:text-7xl
-              lg:text-8xl
-              leading-[0.95]
-              tracking-[-0.02em]
-              drop-shadow-[0_3px_12px_rgba(0,0,0,0.35)]
-            "
-          >
-            Yesica
-          </h1>
-        </motion.div>
-
+      {/* =========================
+          FECHA - PARTE INFERIOR
+      ========================== */}
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 25,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 1.2,
+          delay: 1.1,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="
+          absolute
+          z-10
+          bottom-12
+          sm:bottom-14
+          md:bottom-16
+          left-0
+          w-full
+          px-6
+          text-center
+        "
+      >
         {/* LÍNEA */}
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "70px" }}
           transition={{
             duration: 1,
-            delay: 1.2,
+            delay: 1.3,
           }}
           className="
             h-[1px]
             bg-white/80
-            mt-6
+            mx-auto
+            mb-5
           "
         />
 
         {/* FECHA */}
-        <motion.p
-          initial={{
-            opacity: 0,
-            y: 15,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1,
-            delay: 1.3,
-          }}
+        <p
           className="
-            mt-4
             text-white
             font-playfair
-            text-2xl
-            sm:text-base
-            md:text-lg
+            text-base
+            sm:text-lg
+            md:text-xl
             tracking-[0.35em]
-            drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]
+            drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]
           "
         >
           14 · NOV · 26
-        </motion.p>
-      </div>
+        </p>
+      </motion.div>
     </section>
   );
 }
