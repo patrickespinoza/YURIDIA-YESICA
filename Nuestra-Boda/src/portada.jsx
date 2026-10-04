@@ -5,9 +5,7 @@ export default function Portada() {
   return (
     <section className="relative w-full h-[100svh] min-h-[650px] overflow-hidden">
 
-      {/* =========================
-          IMAGEN PRINCIPAL
-      ========================== */}
+      {/* IMAGEN PRINCIPAL */}
       <motion.img
         src="/portada.jpg"
         alt="Yuridia y Yesica"
@@ -25,43 +23,38 @@ export default function Portada() {
         "
       />
 
-      {/* 
-        Sombra MUY sutil únicamente para permitir
-        que el texto sea legible sobre la fotografía.
-        No agrega ningún color al diseño.
-      */}
+      {/* SOMBRA SUTIL SUPERIOR */}
       <div
         className="
           absolute inset-0
           bg-gradient-to-b
-          from-black/5
-          via-transparent
-          to-black/35
+          from-black/35
+          via-black/5
+          to-transparent
           pointer-events-none
         "
       />
 
-      {/* =========================
-          CONTENIDO
-      ========================== */}
+      {/* CONTENIDO SUPERIOR */}
       <div
         className="
           relative z-10
           w-full h-full
           flex flex-col
           items-center
-          justify-end
+          justify-start
           text-center
           px-6
-          pb-16 sm:pb-20 md:pb-24
+          pt-14
+          sm:pt-16
+          md:pt-20
         "
       >
-
         {/* NOMBRES */}
         <motion.div
           initial={{
             opacity: 0,
-            y: 35,
+            y: -30,
           }}
           animate={{
             opacity: 1,
@@ -83,7 +76,7 @@ export default function Portada() {
               lg:text-8xl
               leading-[0.95]
               tracking-[-0.02em]
-              drop-shadow-[0_3px_12px_rgba(0,0,0,0.25)]
+              drop-shadow-[0_3px_12px_rgba(0,0,0,0.35)]
             "
           >
             Yuridia
@@ -104,11 +97,14 @@ export default function Portada() {
               delay: 0.9,
             }}
             className="
-              my-1 sm:my-2
+              my-1
+              sm:my-2
               text-white
-              text-3xl sm:text-4xl md:text-5xl
+              text-3xl
+              sm:text-4xl
+              md:text-5xl
               font-[Cedarville_Cursive]
-              drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]
+              drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]
             "
           >
             &
@@ -124,7 +120,7 @@ export default function Portada() {
               lg:text-8xl
               leading-[0.95]
               tracking-[-0.02em]
-              drop-shadow-[0_3px_12px_rgba(0,0,0,0.25)]
+              drop-shadow-[0_3px_12px_rgba(0,0,0,0.35)]
             "
           >
             Yesica
@@ -142,7 +138,7 @@ export default function Portada() {
           className="
             h-[1px]
             bg-white/80
-            mt-7
+            mt-6
           "
         />
 
@@ -161,12 +157,14 @@ export default function Portada() {
             delay: 1.3,
           }}
           className="
-            mt-5
+            mt-4
             text-white
             font-playfair
-            text-sm sm:text-base md:text-lg
+            text-2xl
+            sm:text-base
+            md:text-lg
             tracking-[0.35em]
-            drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]
+            drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]
           "
         >
           14 · NOV · 26
