@@ -1,47 +1,177 @@
-import React, { useRef, useState } from 'react';
-
+import React from "react";
+import { motion } from "framer-motion";
 
 export default function Portada() {
-  const audioRef = useRef(null);
-  const [isMuted, setIsMuted] = useState(false); 
-
-  const handlePlayMusic = () => {
-    if (audioRef.current) {
-      audioRef.current.play().catch((error) => {
-        console.error("Error al intentar reproducir el audio:", error);
-      });
-    }
-  };
-
-  const toggleMute = () => {
-    if (audioRef.current) {
-      audioRef.current.muted = !isMuted; 
-      setIsMuted(!isMuted); 
-    }
-  };
-
   return (
-    <div>
-      <section className="relative w-full h-[calc(110vh-160px)] md:h-screen flex flex-col items-center justify-center text-white">
-        <img
-          src="/portada.png"
-          alt="Fondo"
-          className="absolute w-full h-full object-cover"
+    <section className="relative w-full h-[100svh] min-h-[650px] overflow-hidden">
+
+      {/* =========================
+          IMAGEN PRINCIPAL
+      ========================== */}
+      <motion.img
+        src="/portada.jpg"
+        alt="Yuridia y Yesica"
+        initial={{ scale: 1.08 }}
+        animate={{ scale: 1 }}
+        transition={{
+          duration: 2.2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="
+          absolute inset-0
+          w-full h-full
+          object-cover
+          object-center
+        "
+      />
+
+      {/* 
+        Sombra MUY sutil únicamente para permitir
+        que el texto sea legible sobre la fotografía.
+        No agrega ningún color al diseño.
+      */}
+      <div
+        className="
+          absolute inset-0
+          bg-gradient-to-b
+          from-black/5
+          via-transparent
+          to-black/35
+          pointer-events-none
+        "
+      />
+
+      {/* =========================
+          CONTENIDO
+      ========================== */}
+      <div
+        className="
+          relative z-10
+          w-full h-full
+          flex flex-col
+          items-center
+          justify-end
+          text-center
+          px-6
+          pb-16 sm:pb-20 md:pb-24
+        "
+      >
+
+        {/* NOMBRES */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 35,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1.2,
+            delay: 0.5,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
+          <h1
+            className="
+              text-white
+              font-playfair
+              text-[42px]
+              sm:text-6xl
+              md:text-7xl
+              lg:text-8xl
+              leading-[0.95]
+              tracking-[-0.02em]
+              drop-shadow-[0_3px_12px_rgba(0,0,0,0.25)]
+            "
+          >
+            Yuridia
+          </h1>
+
+          {/* & */}
+          <motion.p
+            initial={{
+              opacity: 0,
+              scale: 0.8,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 1,
+              delay: 0.9,
+            }}
+            className="
+              my-1 sm:my-2
+              text-white
+              text-3xl sm:text-4xl md:text-5xl
+              font-[Cedarville_Cursive]
+              drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]
+            "
+          >
+            &
+          </motion.p>
+
+          <h1
+            className="
+              text-white
+              font-playfair
+              text-[42px]
+              sm:text-6xl
+              md:text-7xl
+              lg:text-8xl
+              leading-[0.95]
+              tracking-[-0.02em]
+              drop-shadow-[0_3px_12px_rgba(0,0,0,0.25)]
+            "
+          >
+            Yesica
+          </h1>
+        </motion.div>
+
+        {/* LÍNEA */}
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "70px" }}
+          transition={{
+            duration: 1,
+            delay: 1.2,
+          }}
+          className="
+            h-[1px]
+            bg-white/80
+            mt-7
+          "
         />
 
-        <div className="relative bg-opacity-50 rounded-lg w-full h-full justify-center items-center flex flex-col p-4 gap-4">
-          <h1 className="roboto-black p-12 text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-serif">
-            Nuestra Boda
-          </h1>
-          <p className="font-serif text-2xl sm:text-2xl md:text-3xl lg:text-4xl" >11 |
-             06 | 2026
-          </p>
-          <p className="font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl">Karla & Mark</p>
-        </div>
-      </section>
-    </div>
-    
+        {/* FECHA */}
+        <motion.p
+          initial={{
+            opacity: 0,
+            y: 15,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+            delay: 1.3,
+          }}
+          className="
+            mt-5
+            text-white
+            font-playfair
+            text-sm sm:text-base md:text-lg
+            tracking-[0.35em]
+            drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]
+          "
+        >
+          14 · NOV · 26
+        </motion.p>
+      </div>
+    </section>
   );
 }
-
-
