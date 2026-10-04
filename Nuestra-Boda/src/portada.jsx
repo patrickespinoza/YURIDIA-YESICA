@@ -175,7 +175,7 @@ export default function Portada() {
           className="
             text-white
             font-playfair
-            text-base
+            text-xl
             sm:text-lg
             md:text-xl
             tracking-[0.35em]
