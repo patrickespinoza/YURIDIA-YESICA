@@ -12,7 +12,7 @@ const Novios = () => {
         px-5 py-20 sm:px-8
       "
     >
-      {/* Fondo champagne */}
+      {/* FONDO DECORATIVO */}
       <div
         className="
           absolute inset-0
@@ -20,49 +20,163 @@ const Novios = () => {
         "
       />
 
-      {/* Luces decorativas */}
       <div className="absolute top-[-80px] right-[-80px] w-64 h-64 rounded-full bg-[#B89B5E]/10 blur-3xl" />
+
       <div className="absolute bottom-[-100px] left-[-100px] w-72 h-72 rounded-full bg-[#1F3829]/10 blur-3xl" />
 
-      {/* Hojas superiores */}
+      {/* RAMA SUPERIOR */}
       <motion.div
-        initial={{ opacity: 0, x: -40, rotate: -15 }}
-        whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-        transition={{ duration: 1.2 }}
+        initial={{
+          opacity: 0,
+          x: -40,
+          rotate: -15,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+          rotate: 0,
+        }}
+        transition={{
+          duration: 1.2,
+        }}
         viewport={{ once: true }}
-        className="absolute -top-4 -left-3 sm:left-5"
+        className="
+          absolute
+          -top-4
+          -left-3
+          sm:left-5
+        "
       >
         <div className="relative w-28 h-40">
-          <div className="absolute left-10 top-0 w-[2px] h-36 bg-[#B89B5E]/60 rotate-[25deg]" />
+          <div
+            className="
+              absolute
+              left-10 top-0
+              w-[2px] h-36
+              bg-[#B89B5E]/60
+              rotate-[25deg]
+            "
+          />
 
-          <div className="absolute left-4 top-6 w-12 h-6 bg-[#294634] rounded-[100%_0_100%_0] rotate-[-20deg]" />
-          <div className="absolute left-10 top-12 w-14 h-7 bg-[#36543F] rounded-[0_100%_0_100%] rotate-[25deg]" />
-          <div className="absolute left-1 top-20 w-14 h-7 bg-[#1F3829] rounded-[100%_0_100%_0] rotate-[-15deg]" />
+          <div
+            className="
+              absolute
+              left-4 top-6
+              w-12 h-6
+              bg-[#294634]
+              rounded-[100%_0_100%_0]
+              rotate-[-20deg]
+            "
+          />
+
+          <div
+            className="
+              absolute
+              left-10 top-12
+              w-14 h-7
+              bg-[#36543F]
+              rounded-[0_100%_0_100%]
+              rotate-[25deg]
+            "
+          />
+
+          <div
+            className="
+              absolute
+              left-1 top-20
+              w-14 h-7
+              bg-[#1F3829]
+              rounded-[100%_0_100%_0]
+              rotate-[-15deg]
+            "
+          />
         </div>
       </motion.div>
 
-      {/* Hojas inferiores */}
+      {/* RAMA INFERIOR */}
       <motion.div
-        initial={{ opacity: 0, x: 40, rotate: 15 }}
-        whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-        transition={{ duration: 1.2 }}
+        initial={{
+          opacity: 0,
+          x: 40,
+          rotate: 15,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+          rotate: 0,
+        }}
+        transition={{
+          duration: 1.2,
+        }}
         viewport={{ once: true }}
-        className="absolute -bottom-5 -right-5 sm:right-4 rotate-180"
+        className="
+          absolute
+          -bottom-5
+          -right-5
+          sm:right-4
+          rotate-180
+        "
       >
         <div className="relative w-32 h-44">
-          <div className="absolute left-10 top-0 w-[2px] h-40 bg-[#B89B5E]/60 rotate-[25deg]" />
+          <div
+            className="
+              absolute
+              left-10 top-0
+              w-[2px] h-40
+              bg-[#B89B5E]/60
+              rotate-[25deg]
+            "
+          />
 
-          <div className="absolute left-3 top-7 w-14 h-7 bg-[#294634] rounded-[100%_0_100%_0] rotate-[-20deg]" />
-          <div className="absolute left-11 top-14 w-14 h-7 bg-[#36543F] rounded-[0_100%_0_100%] rotate-[25deg]" />
-          <div className="absolute left-0 top-24 w-16 h-8 bg-[#1F3829] rounded-[100%_0_100%_0] rotate-[-15deg]" />
+          <div
+            className="
+              absolute
+              left-3 top-7
+              w-14 h-7
+              bg-[#294634]
+              rounded-[100%_0_100%_0]
+              rotate-[-20deg]
+            "
+          />
+
+          <div
+            className="
+              absolute
+              left-11 top-14
+              w-14 h-7
+              bg-[#36543F]
+              rounded-[0_100%_0_100%]
+              rotate-[25deg]
+            "
+          />
+
+          <div
+            className="
+              absolute
+              left-0 top-24
+              w-16 h-8
+              bg-[#1F3829]
+              rounded-[100%_0_100%_0]
+              rotate-[-15deg]
+            "
+          />
         </div>
       </motion.div>
 
-      {/* Contenido */}
+      {/* CONTENIDO */}
       <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
+        initial={{
+          opacity: 0,
+          y: 60,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 1.2,
+          ease: "easeOut",
+        }}
         viewport={{ once: true }}
         className="
           relative z-10
@@ -72,11 +186,19 @@ const Novios = () => {
           sm:px-12 sm:py-16
         "
       >
-        {/* Título */}
+        {/* TÍTULO */}
         <motion.p
-          initial={{ opacity: 0, letterSpacing: "0.4em" }}
-          whileInView={{ opacity: 1, letterSpacing: "0.25em" }}
-          transition={{ duration: 1 }}
+          initial={{
+            opacity: 0,
+            letterSpacing: "0.4em",
+          }}
+          whileInView={{
+            opacity: 1,
+            letterSpacing: "0.25em",
+          }}
+          transition={{
+            duration: 1,
+          }}
           viewport={{ once: true }}
           className="
             uppercase
@@ -88,13 +210,27 @@ const Novios = () => {
           Nuestro Hijo
         </motion.p>
 
-        {/* Ornamento */}
+        {/* SEPARADOR */}
         <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
+          initial={{
+            opacity: 0,
+            scaleX: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+            scaleX: 1,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.2,
+          }}
           viewport={{ once: true }}
-          className="flex items-center justify-center gap-3 mt-5"
+          className="
+            flex items-center
+            justify-center
+            gap-3
+            mt-5
+          "
         >
           <div className="w-16 sm:w-24 h-[1px] bg-[#B28A4A]" />
 
@@ -105,11 +241,20 @@ const Novios = () => {
           <div className="w-16 sm:w-24 h-[1px] bg-[#B28A4A]" />
         </motion.div>
 
-        {/* Frase superior */}
+        {/* FRASE */}
         <motion.p
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.35 }}
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.35,
+          }}
           viewport={{ once: true }}
           className="
             mt-12
@@ -124,59 +269,96 @@ const Novios = () => {
           de nuestras vidas
         </motion.p>
 
-        {/* Nombre del hijo */}
+        {/* NOMBRE */}
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.55 }}
+          initial={{
+            opacity: 0,
+            y: 35,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.55,
+          }}
           viewport={{ once: true }}
           className="mt-12"
         >
           <h1
+            style={{
+              fontFamily: "'Great Vibes', cursive",
+            }}
             className="
               text-[#8A6339]
-              text-4xl
-              sm:text-5xl
-              md:text-6xl
-              font-[Cedarville_Cursive]
-              leading-relaxed
+              text-[58px]
+              sm:text-[72px]
+              md:text-[86px]
+              leading-[1.05]
+              font-normal
             "
           >
             Mauro Samuel
           </h1>
 
           <p
+          style={{
+              fontFamily: " cursive",
+            }}
             className="
               mt-3
               uppercase
               tracking-[0.25em]
               text-[#1C2D22]
               text-sm sm:text-base
-              font-playfair
+              font-normla
             "
           >
-            Lopez RMZ
+            Lopez Ramirez
           </p>
         </motion.div>
 
-        {/* Separador */}
+        {/* LÍNEA */}
         <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: "110px" }}
-          transition={{ duration: 1, delay: 0.8 }}
+          initial={{
+            width: 0,
+          }}
+          whileInView={{
+            width: "110px",
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.8,
+          }}
           viewport={{ once: true }}
-          className="h-[1px] bg-[#B28A4A] mx-auto mt-10"
+          className="
+            h-[1px]
+            bg-[#B28A4A]
+            mx-auto
+            mt-10
+          "
         />
 
-        {/* Texto inferior */}
+        {/* MENSAJE */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+            delay: 1,
+          }}
           viewport={{ once: true }}
           className="
             mt-9
-            max-w-xl mx-auto
+            max-w-xl
+            mx-auto
             text-[#3E332A]
             text-base sm:text-lg
             font-playfair
@@ -190,16 +372,32 @@ const Novios = () => {
           para celebrar juntos.
         </motion.p>
 
-        {/* Ornamento inferior */}
+        {/* DECORACIÓN FINAL */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+            delay: 1.2,
+          }}
           viewport={{ once: true }}
-          className="flex justify-center items-center gap-3 mt-10"
+          className="
+            flex justify-center
+            items-center
+            gap-3
+            mt-10
+          "
         >
           <div className="w-10 h-[1px] bg-[#B28A4A]/60" />
-          <span className="text-[#B28A4A] text-xs">◆</span>
+
+          <span className="text-[#B28A4A] text-xs">
+            ◆
+          </span>
+
           <div className="w-10 h-[1px] bg-[#B28A4A]/60" />
         </motion.div>
       </motion.div>

@@ -127,7 +127,7 @@ const Vestimenta = () => {
             tracking-[0.08em]
           "
         >
-          CASUAL
+          CASUAL FORMAL
         </motion.h1>
 
         {/* Tarjeta indicación */}

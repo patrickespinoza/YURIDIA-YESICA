@@ -151,20 +151,20 @@ Les deseo que tengan una celebración muy especial. 🤎`;
             <div className="w-14 h-[1px] bg-[#B89B5E]" />
           </div>
 
-          <p
-            className="
-              mt-7
-              text-[#594638]
-              text-base sm:text-lg
-              font-playfair
-              italic
-              leading-relaxed
-            "
-          >
-            Nos encantará saber si podremos
-            <br className="hidden sm:block" />
-            contar con tu presencia.
-          </p>
+<p
+  className="
+    mt-7
+    max-w-md
+    mx-auto
+    text-[#594638]
+    text-base sm:text-lg
+    font-playfair
+    italic
+    leading-[1.9]
+  "
+>
+  Nos encantará saber si podremos contar con tu presencia.
+</p>
         </motion.div>
 
         {/* FORMULARIO */}

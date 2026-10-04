@@ -23,7 +23,7 @@ export default function Portada() {
         "
       />
 
-      {/* SOMBRA MUY SUTIL ARRIBA Y ABAJO */}
+      {/* SOMBRA SUTIL */}
       <div
         className="
           absolute inset-0
@@ -35,126 +35,111 @@ export default function Portada() {
         "
       />
 
-      {/* =========================
-          NOMBRES - PARTE SUPERIOR
-      ========================== */}
+      {/* NOMBRES ARRIBA */}
       <motion.div
-        initial={{
-          opacity: 0,
-          y: -30,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{
           duration: 1.2,
           delay: 0.4,
           ease: [0.22, 1, 0.36, 1],
         }}
         className="
-          absolute
-          z-10
-          top-12
-          sm:top-14
-          md:top-16
+          absolute z-10
+          top-10 sm:top-12 md:top-16
           left-0
           w-full
-          px-6
+          px-5
           text-center
         "
       >
-        <h1
+        {/* YURIDIA */}
+        <motion.h1
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          style={{
+            fontFamily: "'Great Vibes', cursive",
+          }}
           className="
             text-white
-            font-playfair
-            text-[42px]
-            sm:text-6xl
-            md:text-7xl
-            lg:text-8xl
-            leading-[0.95]
-            tracking-[-0.02em]
-            drop-shadow-[0_3px_12px_rgba(0,0,0,0.45)]
+            text-[64px]
+            sm:text-[82px]
+            md:text-[100px]
+            lg:text-[120px]
+            leading-[0.85]
+            font-normal
+            drop-shadow-[0_3px_12px_rgba(0,0,0,0.55)]
           "
         >
-          Yuridia
-        </h1>
+          Yuri
+        </motion.h1>
 
         {/* & */}
         <motion.p
-          initial={{
-            opacity: 0,
-            scale: 0.7,
-          }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-          }}
+          initial={{ opacity: 0, scale: 0.7 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{
-            duration: 1,
+            duration: 0.8,
             delay: 0.8,
           }}
+          style={{
+            fontFamily: "'Great Vibes', cursive",
+          }}
           className="
-            my-1
-            sm:my-2
             text-white
-            text-3xl
-            sm:text-4xl
-            md:text-5xl
-            font-[Cedarville_Cursive]
-            drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]
+            text-[34px]
+            sm:text-[42px]
+            md:text-[50px]
+            leading-none
+            my-2
+            drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]
           "
         >
           &
         </motion.p>
 
-        <h1
+        {/* YESICA */}
+        <motion.h1
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.9 }}
+          style={{
+            fontFamily: "'Great Vibes', cursive",
+          }}
           className="
             text-white
-            font-playfair
-            text-[42px]
-            sm:text-6xl
-            md:text-7xl
-            lg:text-8xl
-            leading-[0.95]
-            tracking-[-0.02em]
-            drop-shadow-[0_3px_12px_rgba(0,0,0,0.45)]
+            text-[64px]
+            sm:text-[82px]
+            md:text-[100px]
+            lg:text-[120px]
+            leading-[0.85]
+            font-normal
+            drop-shadow-[0_3px_12px_rgba(0,0,0,0.55)]
           "
         >
-          Yesica
-        </h1>
+          Yesi
+        </motion.h1>
       </motion.div>
 
-      {/* =========================
-          FECHA - PARTE INFERIOR
-      ========================== */}
+      {/* FECHA ABAJO */}
       <motion.div
-        initial={{
-          opacity: 0,
-          y: 25,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
+        initial={{ opacity: 0, y: 25 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{
           duration: 1.2,
           delay: 1.1,
           ease: [0.22, 1, 0.36, 1],
         }}
         className="
-          absolute
-          z-10
-          bottom-12
-          sm:bottom-14
-          md:bottom-16
+          absolute z-10
+          bottom-12 sm:bottom-14 md:bottom-16
           left-0
           w-full
           px-6
           text-center
         "
       >
-        {/* LÍNEA */}
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "70px" }}
@@ -170,14 +155,13 @@ export default function Portada() {
           "
         />
 
-        {/* FECHA */}
         <p
           className="
             text-white
             font-playfair
             text-xl
-            sm:text-lg
-            md:text-xl
+            sm:text-xl
+            md:text-2xl
             tracking-[0.35em]
             drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]
           "

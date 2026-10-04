@@ -14,37 +14,37 @@ const Itinerario2 = () => {
   const eventos = [
     {
       hora: "5:00 pm",
-      titulo: "Bienvenida",
+      titulo: "Bienvenida a nuestros invitados",
       Icono: DoorOpen,
     },
     {
       hora: "5:30 pm",
-      titulo: "Civil",
+      titulo: "La promesa de caminar juntas",
       Icono: HeartHandshake,
     },
     {
       hora: "6:30 pm",
-      titulo: "Fotos",
+      titulo: "Instantes para recordar",
       Icono: Camera,
     },
     {
       hora: "7:00 pm",
-      titulo: "Show",
+      titulo: "Una noche fuera de lo común ",
       Icono: Sparkles,
     },
     {
       hora: "8:30 pm",
-      titulo: "Cena",
+      titulo: "Un festin para el corazón ",
       Icono: Utensils,
     },
     {
       hora: "9:00 pm",
-      titulo: "Pastel",
+      titulo: "Endulzando nuestro para siempre",
       Icono: CakeSlice,
     },
     {
       hora: "9:30 pm",
-      titulo: "Despedida",
+      titulo: "Un último detalle para ti",
       Icono: MoonStar,
     },
   ];
