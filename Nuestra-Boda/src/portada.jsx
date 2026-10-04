@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Portada() {
   return (
     <>
-      {/* ALLURA - SIMILAR AL ESTILO MONGGIRELLA */}
+      {/* ALLURA - ESTILO CALIGRÁFICO */}
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
@@ -60,88 +60,141 @@ export default function Portada() {
             left-0
             w-full
             px-5
-            text-center
           "
         >
-          {/* YURI */}
-          <motion.h1
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 1,
-              delay: 0.5,
-            }}
-            style={{
-              fontFamily: "'Allura', cursive",
-            }}
-            className="
-              text-white
-              text-[82px]
-              sm:text-[100px]
-              md:text-[120px]
-              lg:text-[140px]
-              leading-[0.72]
-              font-normal
-              drop-shadow-[0_3px_12px_rgba(0,0,0,0.55)]
-            "
-          >
-            Yuri
-          </motion.h1>
+          <div className="w-full max-w-[650px] mx-auto">
 
-          {/* & */}
-          <motion.p
-            initial={{
-              opacity: 0,
-              scale: 0.7,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: 0.8,
-            }}
-            style={{
-              fontFamily: "'Allura', cursive",
-            }}
-            className="
-              text-white
-              text-[52px]
-              sm:text-[62px]
-              md:text-[72px]
-              leading-none
-              my-2 sm:my-3
-              drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]
-            "
-          >
-            &
-          </motion.p>
+            {/* =====================
+                YURI - IZQUIERDA
+            ====================== */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: -35,
+                y: -15,
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                y: 0,
+              }}
+              transition={{
+                duration: 1,
+                delay: 0.5,
+              }}
+              className="
+                flex
+                justify-start
+                pl-3
+                sm:pl-8
+                md:pl-12
+              "
+            >
+              <h1
+                style={{
+                  fontFamily: "'Allura', cursive",
+                }}
+                className="
+                  text-white
+                  text-[82px]
+                  sm:text-[100px]
+                  md:text-[120px]
+                  lg:text-[140px]
+                  leading-[0.8]
+                  font-normal
+                  drop-shadow-[0_3px_12px_rgba(0,0,0,0.55)]
+                "
+              >
+                Yuri
+              </h1>
+            </motion.div>
 
-          {/* YESI */}
-          <motion.h1
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 1,
-              delay: 0.9,
-            }}
-            style={{
-              fontFamily: "'Allura', cursive",
-            }}
-            className="
-              text-white
-              text-[82px]
-              sm:text-[100px]
-              md:text-[120px]
-              lg:text-[140px]
-              leading-[0.72]
-              font-normal
-              drop-shadow-[0_3px_12px_rgba(0,0,0,0.55)]
-            "
-          >
-            Yesi
-          </motion.h1>
+            {/* =====================
+                & - CENTRO
+            ====================== */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0.7,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.8,
+              }}
+              className="
+                flex
+                justify-center
+                -my-1
+                sm:my-0
+              "
+            >
+              <span
+                style={{
+                  fontFamily: "'Allura', cursive",
+                }}
+                className="
+                  text-white
+                  text-[52px]
+                  sm:text-[62px]
+                  md:text-[72px]
+                  leading-none
+                  drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]
+                "
+              >
+                &
+              </span>
+            </motion.div>
+
+            {/* =====================
+                YESI - DERECHA
+            ====================== */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 35,
+                y: 15,
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                y: 0,
+              }}
+              transition={{
+                duration: 1,
+                delay: 0.9,
+              }}
+              className="
+                flex
+                justify-end
+                pr-3
+                sm:pr-8
+                md:pr-12
+              "
+            >
+              <h1
+                style={{
+                  fontFamily: "'Allura', cursive",
+                }}
+                className="
+                  text-white
+                  text-[82px]
+                  sm:text-[100px]
+                  md:text-[120px]
+                  lg:text-[140px]
+                  leading-[0.8]
+                  font-normal
+                  drop-shadow-[0_3px_12px_rgba(0,0,0,0.55)]
+                "
+              >
+                Yesi
+              </h1>
+            </motion.div>
+
+          </div>
         </motion.div>
 
         {/* =========================
@@ -201,6 +254,7 @@ export default function Portada() {
             14 · NOV · 26
           </p>
         </motion.div>
+
       </section>
     </>
   );
