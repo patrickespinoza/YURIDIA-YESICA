@@ -105,7 +105,7 @@ export default function Portada() {
                   drop-shadow-[0_3px_12px_rgba(0,0,0,0.55)]
                 "
               >
-                Yuri
+                Yesi
               </h1>
             </motion.div>
 
@@ -190,7 +190,7 @@ export default function Portada() {
                   drop-shadow-[0_3px_12px_rgba(0,0,0,0.55)]
                 "
               >
-                Yesi
+                Yuri
               </h1>
             </motion.div>
 
