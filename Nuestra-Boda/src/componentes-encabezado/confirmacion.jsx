@@ -23,49 +23,58 @@ export default function ConfirmacionAsistencia() {
     e.preventDefault();
     setError("");
 
+    // VALIDAR NOMBRE
     if (!nombre.trim()) {
       setError("Por favor escribe tu nombre.");
       return;
     }
 
+    // VALIDAR ASISTENCIA
     if (!asistencia) {
       setError("Por favor selecciona si asistirás.");
       return;
     }
 
-    if (asistencia === "Sí asistiré" && (!adultos || !ninos)) {
-      setError(
-        "Por favor selecciona la cantidad de adultos y niños."
-      );
+    // SOLO ADULTOS ES OBLIGATORIO
+    // NIÑOS ES OPCIONAL
+    if (asistencia === "Sí asistiré" && !adultos) {
+      setError("Por favor selecciona la cantidad de adultos.");
       return;
     }
 
     let texto = "";
 
+    // =========================
+    // SÍ ASISTIRÁ
+    // =========================
     if (asistencia === "Sí asistiré") {
       texto = `Hola Yuridia & Yesica ✨
 
 Quiero confirmar mi asistencia.
 
-Nombre: ${nombre}
+Nombre: ${nombre.trim()}
 Asistencia: Sí asistiré
-Adultos: ${adultos}
-Niños: ${ninos}${
+Adultos: ${adultos}${ninos ? `\nNiños: ${ninos}` : ""}${
         mensaje.trim()
-          ? `\n\nMensaje: ${mensaje}`
+          ? `\n\nMensaje: ${mensaje.trim()}`
           : ""
       }
 
 ¡Nos vemos pronto! 🤎`;
-    } else {
+    }
+
+    // =========================
+    // NO ASISTIRÁ
+    // =========================
+    else {
       texto = `Hola Yuridia & Yesica ✨
 
 Gracias por la invitación.
 
-Nombre: ${nombre}
+Nombre: ${nombre.trim()}
 Asistencia: No podré asistir${
         mensaje.trim()
-          ? `\n\nMensaje: ${mensaje}`
+          ? `\n\nMensaje: ${mensaje.trim()}`
           : ""
       }
 
@@ -79,6 +88,9 @@ Les deseo que tengan una celebración muy especial. 🤎`;
     window.open(url, "_blank");
   };
 
+  // =========================
+  // SELECCIONAR ASISTENCIA
+  // =========================
   const seleccionarAsistencia = (valor) => {
     setAsistencia(valor);
     setError("");
@@ -107,12 +119,15 @@ Les deseo que tengan una celebración muy especial. 🤎`;
       />
 
       <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#B89B5E]/10 blur-3xl" />
+
       <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#173124]/10 blur-3xl" />
 
       {/* CONTENIDO */}
       <div className="relative z-10 max-w-2xl mx-auto">
 
-        {/* ENCABEZADO */}
+        {/* =========================
+            ENCABEZADO
+        ========================== */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -147,32 +162,41 @@ Les deseo que tengan una celebración muy especial. 🤎`;
 
           <div className="flex items-center justify-center gap-3 mt-6">
             <div className="w-14 h-[1px] bg-[#B89B5E]" />
-            <span className="text-[#B89B5E] text-xs">◆</span>
+
+            <span className="text-[#B89B5E] text-xs">
+              ◆
+            </span>
+
             <div className="w-14 h-[1px] bg-[#B89B5E]" />
           </div>
 
-<p
-  className="
-    mt-7
-    max-w-md
-    mx-auto
-    text-[#594638]
-    text-base sm:text-lg
-    font-playfair
-    italic
-    leading-[1.9]
-  "
->
-  Nos encantará saber si podremos contar con tu presencia.
-</p>
+          <p
+            className="
+              mt-7
+              max-w-md
+              mx-auto
+              text-[#594638]
+              text-base sm:text-lg
+              font-playfair
+              italic
+              leading-[1.9]
+            "
+          >
+            Nos encantará saber si podremos contar con tu presencia.
+          </p>
         </motion.div>
 
-        {/* FORMULARIO */}
+        {/* =========================
+            FORMULARIO
+        ========================== */}
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
+          transition={{
+            duration: 1,
+            delay: 0.2,
+          }}
           viewport={{ once: true }}
           className="
             relative
@@ -188,7 +212,7 @@ Les deseo que tengan una celebración muy especial. 🤎`;
             overflow-hidden
           "
         >
-          {/* Línea dorada */}
+          {/* LÍNEA DORADA */}
           <div
             className="
               absolute top-0 left-1/2
@@ -198,7 +222,9 @@ Les deseo que tengan una celebración muy especial. 🤎`;
             "
           />
 
-          {/* NOMBRE */}
+          {/* =========================
+              NOMBRE
+          ========================== */}
           <div>
             <label
               className="
@@ -216,7 +242,10 @@ Les deseo que tengan una celebración muy especial. 🤎`;
               type="text"
               placeholder="Nombre y apellido"
               value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
+              onChange={(e) => {
+                setNombre(e.target.value);
+                setError("");
+              }}
               className="
                 w-full
                 bg-[#F4EBDD]
@@ -232,7 +261,9 @@ Les deseo que tengan una celebración muy especial. 🤎`;
             />
           </div>
 
-          {/* ASISTENCIA */}
+          {/* =========================
+              ASISTENCIA
+          ========================== */}
           <div className="mt-8">
             <p
               className="
@@ -248,6 +279,7 @@ Les deseo que tengan una celebración muy especial. 🤎`;
             </p>
 
             <div className="grid grid-cols-2 gap-3">
+              {/* SÍ */}
               <button
                 type="button"
                 onClick={() =>
@@ -270,9 +302,11 @@ Les deseo que tengan una celebración muy especial. 🤎`;
                 `}
               >
                 <Check size={18} strokeWidth={1.5} />
+
                 Sí asistiré
               </button>
 
+              {/* NO */}
               <button
                 type="button"
                 onClick={() =>
@@ -295,12 +329,15 @@ Les deseo que tengan una celebración muy especial. 🤎`;
                 `}
               >
                 <X size={18} strokeWidth={1.5} />
+
                 No asistiré
               </button>
             </div>
           </div>
 
-          {/* ADULTOS Y NIÑOS */}
+          {/* =========================
+              ADULTOS Y NIÑOS
+          ========================== */}
           <AnimatePresence>
             {asistencia === "Sí asistiré" && (
               <motion.div
@@ -318,7 +355,9 @@ Les deseo que tengan una celebración muy especial. 🤎`;
                   opacity: 0,
                   height: 0,
                 }}
-                transition={{ duration: 0.4 }}
+                transition={{
+                  duration: 0.4,
+                }}
                 className="overflow-hidden"
               >
                 <div className="mt-9">
@@ -333,7 +372,9 @@ Les deseo que tengan una celebración muy especial. 🤎`;
                     Indícanos cuántos invitados asistirán
                   </p>
 
-                  {/* ADULTOS */}
+                  {/* =====================
+                      ADULTOS
+                  ====================== */}
                   <div
                     className="
                       mt-7
@@ -377,9 +418,10 @@ Les deseo que tengan una celebración muy especial. 🤎`;
                         <button
                           key={cantidad}
                           type="button"
-                          onClick={() =>
-                            setAdultos(String(cantidad))
-                          }
+                          onClick={() => {
+                            setAdultos(String(cantidad));
+                            setError("");
+                          }}
                           className={`
                             py-4
                             rounded-xl
@@ -401,7 +443,9 @@ Les deseo que tengan una celebración muy especial. 🤎`;
                     </div>
                   </div>
 
-                  {/* NIÑOS */}
+                  {/* =====================
+                      NIÑOS - OPCIONAL
+                  ====================== */}
                   <div
                     className="
                       mt-4
@@ -429,15 +473,18 @@ Les deseo que tengan una celebración muy especial. 🤎`;
                       </p>
                     </div>
 
+                    {/* IMPORTANTE:
+                        NIÑOS NO ES OBLIGATORIO */}
                     <p
                       className="
                         text-center
                         text-[#D8CDBA]/60
                         text-xs
                         mt-2
+                        leading-relaxed
                       "
                     >
-                      Selecciona 1 o 2
+                      Opcional · selecciona solo si asistirán niños
                     </p>
 
                     <div className="grid grid-cols-2 gap-3 mt-5">
@@ -445,9 +492,10 @@ Les deseo que tengan una celebración muy especial. 🤎`;
                         <button
                           key={cantidad}
                           type="button"
-                          onClick={() =>
-                            setNinos(String(cantidad))
-                          }
+                          onClick={() => {
+                            setNinos(String(cantidad));
+                            setError("");
+                          }}
                           className={`
                             py-4
                             rounded-xl
@@ -467,13 +515,50 @@ Les deseo que tengan una celebración muy especial. 🤎`;
                         </button>
                       ))}
                     </div>
+
+                    {/* SI YA SELECCIONÓ NIÑOS,
+                        PERMITE QUITAR LA SELECCIÓN */}
+                    <AnimatePresence>
+                      {ninos && (
+                        <motion.button
+                          type="button"
+                          initial={{
+                            opacity: 0,
+                            y: -5,
+                          }}
+                          animate={{
+                            opacity: 1,
+                            y: 0,
+                          }}
+                          exit={{
+                            opacity: 0,
+                          }}
+                          onClick={() => setNinos("")}
+                          className="
+                            block
+                            mx-auto
+                            mt-4
+                            text-[#D8CDBA]/60
+                            text-xs
+                            underline
+                            underline-offset-4
+                            hover:text-[#F4EBDD]
+                            transition
+                          "
+                        >
+                          Quitar selección de niños
+                        </motion.button>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* MENSAJE */}
+          {/* =========================
+              MENSAJE
+          ========================== */}
           <div className="mt-8">
             <label
               className="
@@ -489,13 +574,16 @@ Les deseo que tengan una celebración muy especial. 🤎`;
                 size={14}
                 strokeWidth={1.5}
               />
+
               Déjanos un mensaje
             </label>
 
             <textarea
               placeholder="Escribe un mensaje especial..."
               value={mensaje}
-              onChange={(e) => setMensaje(e.target.value)}
+              onChange={(e) =>
+                setMensaje(e.target.value)
+              }
               rows={4}
               className="
                 w-full
@@ -513,13 +601,23 @@ Les deseo que tengan una celebración muy especial. 🤎`;
             />
           </div>
 
-          {/* ERROR */}
+          {/* =========================
+              ERROR
+          ========================== */}
           <AnimatePresence>
             {error && (
               <motion.p
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
+                initial={{
+                  opacity: 0,
+                  y: -5,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                exit={{
+                  opacity: 0,
+                }}
                 className="
                   mt-5
                   text-center
@@ -532,11 +630,17 @@ Les deseo que tengan una celebración muy especial. 🤎`;
             )}
           </AnimatePresence>
 
-          {/* BOTÓN WHATSAPP */}
+          {/* =========================
+              BOTÓN WHATSAPP
+          ========================== */}
           <motion.button
             type="submit"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{
+              scale: 1.02,
+            }}
+            whileTap={{
+              scale: 0.97,
+            }}
             className="
               mt-8
               w-full
@@ -554,7 +658,11 @@ Les deseo que tengan una celebración muy especial. 🤎`;
               transition
             "
           >
-            <Send size={17} strokeWidth={1.6} />
+            <Send
+              size={17}
+              strokeWidth={1.6}
+            />
+
             Confirmar por WhatsApp
           </motion.button>
 
@@ -571,17 +679,32 @@ Les deseo que tengan una celebración muy especial. 🤎`;
           </p>
         </motion.form>
 
-        {/* CIERRE */}
+        {/* =========================
+            CIERRE
+        ========================== */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          viewport={{ once: true }}
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.5,
+          }}
+          viewport={{
+            once: true,
+          }}
           className="text-center mt-12"
         >
           <div className="flex items-center justify-center gap-3">
             <div className="w-10 h-[1px] bg-[#B89B5E]/60" />
-            <span className="text-[#B89B5E] text-xs">♥</span>
+
+            <span className="text-[#B89B5E] text-xs">
+              ♥
+            </span>
+
             <div className="w-10 h-[1px] bg-[#B89B5E]/60" />
           </div>
 
